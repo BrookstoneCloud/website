@@ -6,4 +6,4 @@ before_install:
   - docker build -t futumans/docker-react -f Dockerfile.dev .
 
 script:
-  - docker run futumans/docker-react npm run test -- --cover
+  - docker run futumans/docker-react npm run test -- --coverage
