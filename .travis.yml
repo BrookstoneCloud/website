@@ -3,10 +3,10 @@ services:
   - docker
 
 before_install:
-  - docker build -t futumans/docker-react -f Dockerfile.dev .
+  - docker build -t futumans/docker-react1 -f Dockerfile.dev .
 
 script:
-  - docker run -e CI=true futumans/docker-react npm run test -- --coverage
+  - docker run -e CI=true futumans/docker-react1 npm run test -- --coverage
 
 language: minimal
 
