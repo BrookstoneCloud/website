@@ -1,24 +1,9 @@
-sudo: required
-services:
-  - docker
+language: node_js
+node_js:
+- 11.6.0
+cache: npm 
 
-before_install:
-  - docker build -t futumans/docker-react1 -f Dockerfile.dev .
+install:
+  - npm ci
 
-script:
-  - docker run -e CI=true futumans/docker-react1 npm run test -- --coverage
-
-language: minimal
-
-deploy:
-  provider: elasticbeanstalk
-  region: "us-east-1"
-  app: "docker-react1" 
-  env: "Dockerreact1-env"
-  bucket_name: "elasticbeanstalk-us-east-1-652213986584"
-  bucket_path: "docker-react1"
-  on:
-    branch: main
-  access_key_id: $AWS_ACCESS_KEY
-  secret_access_key: "$AWS_SECRET_KEY"
-  edge: true
+script: 
