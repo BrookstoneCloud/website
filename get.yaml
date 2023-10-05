@@ -13,6 +13,6 @@
       shell: hostnamectl
 
 
-    - name: Enable specific version
+    - name: Nginx Status
       become: yes 
       shell: systemctl status nginx
