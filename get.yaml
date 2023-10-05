@@ -11,8 +11,3 @@
     - name: Enable specific version
       become: yes 
       shell: hostnamectl
-
-
-    - name: Nginx Status
-      become: yes 
-      shell: systemctl status nginx
