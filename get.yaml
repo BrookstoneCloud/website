@@ -11,3 +11,7 @@
     - name: Enable specific version
       become: yes 
       shell: hostnamectl
+
+    - name: list 
+      become: yes 
+      shell: 'ls -la'
