@@ -1,0 +1,13 @@
+---
+- name: Get Hostname
+  hosts: all  
+  gather_facts: yes
+
+  tasks:
+    - name: Display Hostname
+      debug:
+        var: ansible_hostname
+
+    - name: Enable specific version
+      become: yes 
+      shell: hostnamectl
